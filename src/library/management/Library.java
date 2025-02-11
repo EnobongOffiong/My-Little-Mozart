@@ -5,6 +5,16 @@ public class Library {
 	private Book[] books = new Book[5];
 	private int count = 0;
 	
+	
+	/**
+	 * This method will add a book to the library if there is space available.
+	 * 
+	 * @param book
+	 * 			This argument is the book object to be added
+	 * @return
+	 * 			Return false if there is no space for the new book. 
+	 * 			Returns true if the addition was successful.
+	 */
 	public boolean addBook(Book book) {
 		if(count >= 5) {
 			System.out.println("There is no more space for to add new books");
@@ -20,9 +30,16 @@ public class Library {
 		
 		return true;
 	}
-//	Adds a book to the array
-//	(if there is space).
-	
+
+	/**
+	 * This method will remove a book from the library if it exists
+	 * 
+	 * @param book
+	 * 			This argument is the book object to be removed
+	 * @return
+	 * 			Return false if there are no books in the library, or the book doesn't exist. 
+	 * 			Returns true if the book was found and removed.
+	 */
 	public boolean removeBook(Book book) {
 		if(count == 0) {
 			System.out.println("There are no books in your Library");
@@ -47,9 +64,16 @@ public class Library {
 		System.out.println("Cannot remove book: " + book.getTitle() + ", book does not exist");
 		return false;
 	}
-//	- Removes a book from
-//	the array (if it exists).
-	
+
+	/**
+     * Searches for a book by ISBN.
+     *
+     * @param ISBN
+     * 			 The ISBN number of the book to search for.
+     * @return 
+     * 			 The Book object if found, or null if no matching book exists.
+     */
+	 
 	public Book searchByISBN(String ISBN) {
 		for(int i = 0 ; i < count; i++) {
 			if(books[i] != null) {
@@ -61,9 +85,12 @@ public class Library {
 		System.out.println("Could not find any book with matching ISBN");
 		return null;
 	}
-//	- Searches for a book by
-//	ISBN and returns the Book object (or null if not found).
-//	
+	
+	/**
+     * Displays all books in the library if there are any.
+     * 
+     * Prints each book's details using its overridden toString() method.
+     */
 	public void displayBooks() {
 		if(count == 0) {
 			System.out.println("There are no books in your Library");
@@ -74,8 +101,7 @@ public class Library {
 		for(int i = 0; i < count; i++) {
 			System.out.println(i+1 + ". " + books[i]);
 		}
+	
 	}
 }
-//	- Prints details of all books using
-//	toString()
-//}
+
