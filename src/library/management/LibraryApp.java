@@ -25,14 +25,30 @@ public class LibraryApp {
 		Book b4 = new Book(b2);
 		lib.addBook(b4);
 		
-		
+		System.out.println();
 		String ISBN = "9780007247882";
 		System.out.println("Searching for book with ISBN:" + ISBN);
 		Book find = lib.searchByISBN(ISBN);
 		if (find != null) {
 			System.out.println("Book Found: " + find.toString());
 		}
+		System.out.println();
+		lib.displayBooks();
 		
+		System.out.println();
+		lib.removeBook(b4);
+		
+		System.out.println();
+		lib.displayBooks();
+		
+		
+		Book b6 = new Book ("My Diary", "Unknown", "Unknown", 10);
+		System.out.println();
+		
+		lib.removeBook(b6);
+		
+		System.out.println();
+		lib.displayBooks();
 		
 	
 	}
