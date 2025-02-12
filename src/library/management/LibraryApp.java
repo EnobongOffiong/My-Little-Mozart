@@ -19,13 +19,19 @@ public class LibraryApp {
 		b3.setAuthor("Robert Greene");
 		b3.setISBN("9788467039054");
 		b3.setPrice(14.55);
+		lib.addBook(b3);
 		
 		//copying book 2 ; so b4 and b2 are the same 
 		Book b4 = new Book(b2);
+		lib.addBook(b4);
 		
 		
-		
-		
+		String ISBN = "9780007247882";
+		System.out.println("Searching for book with ISBN:" + ISBN);
+		Book find = lib.searchByISBN(ISBN);
+		if (find != null) {
+			System.out.println("Book Found: " + find.toString());
+		}
 		
 		
 	

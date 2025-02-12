@@ -26,7 +26,7 @@ public class Library {
 		books[count] = book;
 		count++;
 		
-		System.out.println("Books added successfully!");
+		System.out.println("Book added successfully!");
 		
 		return true;
 	}
