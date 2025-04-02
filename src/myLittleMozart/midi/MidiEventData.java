@@ -5,8 +5,8 @@ public class MidiEventData {
 	private int startEndTick, velocity, note, channel, noteOnOff;
 	private int instrument;
 	
-	public MidiEventData(int startEndTick, int velocity, int note, int channel, int instrument, 
-			int noteOnOff ) {
+	public MidiEventData(int startEndTick, int noteOnOff, int channel, int note, int velocity, int instrument 
+			 ) {
 			this.startEndTick = startEndTick;
 			this.velocity = velocity;
 			this.note = note;
@@ -63,5 +63,17 @@ public class MidiEventData {
 	
 	public int getNote() {
 		return note;
+	}
+	
+	@Override
+	public String toString() {
+		return "MidiEventData{" +
+                "startEndTick=" + startEndTick +
+                ", onOff=" + noteOnOff +
+                ", channel=" + channel +
+                ", note=" + note +
+                ", velocity=" + velocity +
+                ", instrument=" + instrument +
+                '}';
 	}
 }
