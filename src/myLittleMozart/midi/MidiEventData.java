@@ -1,6 +1,6 @@
 package myLittleMozart.midi;
 
-public class MidiEventData {
+public class MidiEventData implements MidiEvent{
 	
 	private int startEndTick, velocity, note, channel, noteOnOff;
 	private int instrument;
@@ -77,3 +77,4 @@ public class MidiEventData {
                 '}';
 	}
 }
+
