@@ -9,4 +9,3 @@ public interface MidiEvent {
 	int getInstrument();
 	
 }
-
