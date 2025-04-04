@@ -6,7 +6,7 @@ import javax.sound.midi.*;
 public class Main {
     public static void main(String[] args) {
         try {
-            List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("./files/mystery_song.csv");
+            List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("/Users/enobongoffiong/Downloads/mystery_song.csv");
             Sequence sequence = new Sequence(Sequence.PPQ, 384);
             Track track = sequence.createTrack();
 
