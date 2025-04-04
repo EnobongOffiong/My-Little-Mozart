@@ -4,9 +4,7 @@
 package behaviors.midi;
 
 import myLittleMozart.midi.MidiEventData;
-import myLittleMozart.midi.MidiEvent;
-
-
+//import javax.sound.midi.*;
 /**
  * create note events with longer durations and minimal gaps between the NoteOff and the next NoteOn event.
  */

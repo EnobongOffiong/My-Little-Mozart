@@ -1,6 +1,6 @@
 package behaviors.midi;
 import myLittleMozart.midi.MidiEventData;
-import myLittleMozart.midi.MidiEvent;
+//import javax.sound.midi.*;
 
 public class StaccatoMidiEventFactory {
     public MidiEventData Staccato(MidiEventData e) {
