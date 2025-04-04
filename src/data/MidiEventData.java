@@ -1,4 +1,4 @@
-package myLittleMozart.midi;
+package data;
 
 public class MidiEventData {
 	

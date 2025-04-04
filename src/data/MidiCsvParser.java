@@ -1,4 +1,4 @@
-package myLittleMozart.midi;
+package data;
 
 import java.util.*;
 import java.io.*;

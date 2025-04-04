@@ -1,5 +1,4 @@
 package factory;
-import myLittleMozart.midi.MidiEventData;
 import javax.sound.midi.*;
 
 public class StaccatoMidiEventFactory implements MidiEventFactory {
