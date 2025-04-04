@@ -3,32 +3,23 @@
  */
 package factory;
 
-import myLittleMozart.midi.MidiEventData;
-//import javax.sound.midi.*;
+import javax.sound.midi.*;
 /**
  * create note events with longer durations and minimal gaps between the NoteOff and the next NoteOn event.
  */
-public class LegatoMidiEventFactory{
+public class LegatoMidiEventFactory implements MidiEventFactory{
 	
-	public MidiEventData legato(MidiEventData e) {
-		
-		int originalTick = e.getStartEndTick();
-	    
-	    
-	    int newTick = originalTick + 80; 
-	    
-	    
-	    MidiEventData legatoEvent = new MidiEventData(
-	        newTick,  // Adjusted duration
-	        e.getNoteOnOff(),  // Note on/off status (same as original)
-	        e.getChannel(),    // MIDI channel
-	        e.getNote(),       // MIDI note
-	        e.getVelocity(),   // Velocity (same as original)
-	        e.getInstrument()  // Instrument (same as original)
-	    );
-	    
-	    return legatoEvent;
-	}
+	public MidiEvent createNoteOn(int tick, int note, int velocity, int channel) throws InvalidMidiDataException {
+        ShortMessage msg = new ShortMessage();
+        msg.setMessage(ShortMessage.NOTE_ON, channel, note, velocity);
+        return new MidiEvent(msg, tick);
+    }
+
+    public MidiEvent createNoteOff(int tick, int note, int channel) throws InvalidMidiDataException {
+        ShortMessage msg = new ShortMessage();
+        msg.setMessage(ShortMessage.NOTE_OFF, channel, note, 0);
+        return new MidiEvent(msg, tick + 80); // legato adds 80 ticks
+    }
 		
 		
 }
