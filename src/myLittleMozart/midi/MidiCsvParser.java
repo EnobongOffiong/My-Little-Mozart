@@ -2,38 +2,33 @@ package myLittleMozart.midi;
 
 import java.util.*;
 import java.io.*;
+import javax.sound.midi.*;
 
 public class MidiCsvParser {
-	
-	public List<MidiEventData> parseCsv(){
-		String csvFile = "/Users/enobongoffiong/Downloads/mystery_song.csv";
+    public static List<MidiEventData> parseCsv(String filePath) {
         String line;
         String csvSplitBy = ",";
-      List<MidiEventData> events = new ArrayList<MidiEventData>();
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        List<MidiEventData> events = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             while ((line = br.readLine()) != null) {
+                if (line.trim().isEmpty()) continue;
                 String[] data = line.split(csvSplitBy);
-                	int OnOff=0;
-                	if(data[1] == "Note_off_c") {
-                		OnOff = 0 ;
-                	}
-                	else {
-                		OnOff = 1;
-                	}
-                    MidiEventData myObj = new MidiEventData(Integer.parseInt(data[0]), OnOff, Integer.parseInt(data[2]), Integer.parseInt(data[3]), Integer.parseInt(data[4]), Integer.parseInt(data[5]));
-                    events.add(myObj);
+                int OnOff = data[1].trim().equals("Note_off_c") ? ShortMessage.NOTE_OFF : ShortMessage.NOTE_ON;
+                int tick = Integer.parseInt(data[0].trim());
+                int channel = Integer.parseInt(data[2].trim());
+                int note = Integer.parseInt(data[3].trim());
+                int velocity = Integer.parseInt(data[4].trim());
+                int instrument = Integer.parseInt(data[5].trim());
+                MidiEventData myObj = new MidiEventData(tick, velocity, note, channel, instrument, OnOff);
+                events.add(myObj);
             }
-                //System.out.println();
-            
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(events);
         return events;
-    
-	}
+    }
+}
 	
-	}
 
 
 
