@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"MyLittleMozart","l":"data"},{"m":"MyLittleMozart","l":"factory"},{"m":"MyLittleMozart","l":"strategy"}];updateSearchResults();

@@ -2,6 +2,12 @@ package factory;
 
 import javax.sound.midi.*;
 
+/**
+ * A factory for creating standard MIDI note events with normal durations.
+ * 
+ * Note-on and note-off events are placed exactly at the provided ticks
+ * without any duration adjustment 
+ */
 public class StandardMidiEventFactory implements MidiEventFactory{
 	
 	public MidiEvent createNoteOn(int tick, int note, int velocity, int channel) throws InvalidMidiDataException {

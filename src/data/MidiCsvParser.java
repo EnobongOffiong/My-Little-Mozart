@@ -4,7 +4,21 @@ import java.util.*;
 import java.io.*;
 import javax.sound.midi.*;
 
+/**
+ * MidiCsvParser reads a CSV file with MIDI note data and turns it into a list of MidiEventData objects.
+ * 
+ * Each line in the file should follow this format:
+ * tick, Note_on_c or Note_off_c, channel, note, velocity, instrument
+ */
 public class MidiCsvParser {
+	
+	
+	/**
+     * Parses the given CSV file and returns a list of MIDI events.
+     *
+     * @param filePath path to the CSV file
+     * @return list of MidiEventData parsed from the file
+     */
     public static List<MidiEventData> parseCsv(String filePath) {
         String line;
         String csvSplitBy = ",";
