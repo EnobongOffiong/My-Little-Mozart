@@ -1,10 +1,12 @@
 package strategy;
 
+import javax.sound.midi.*;
+
 public class AcousticGrandPianoStrategy implements InstrumentStrategy {
 	private final int PIANO_INSTRUMENT = 0;
 	
 	@Override
-	public void applyInstrument (track track, int channel) {
+	public void applyInstrument (Track track, int channel) {
 		
 		try {
             ShortMessage instrumentChange = new ShortMessage();
