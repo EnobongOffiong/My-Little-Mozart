@@ -1,4 +1,5 @@
 package strategy;
+import javax.sound.midi.*;
 
 public class TrumpetStrategy implements InstrumentStrategy {
 	private final int TRUMPET_INSTRUMENT = 56;

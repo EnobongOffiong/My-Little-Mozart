@@ -1,9 +1,11 @@
 package strategy;
 
+import javax.sound.midi.*;
+
 public class ElectricBassGuitarStrategy implements InstrumentStrategy{
 	private final int ELECTRIC_BASS_INSTRUMENT = 33;
 	@Override 
-	public void applyInstument(Track track, int channel){
+	public void applyInstrument(Track track, int channel){
 		try {
             ShortMessage instrumentChange = new ShortMessage();
             instrumentChange.setMessage(ShortMessage.PROGRAM_CHANGE, channel, ELECTRIC_BASS_INSTRUMENT, 0);
